@@ -1,7 +1,3 @@
-// =========================================
-// ARRAY E VARIABILI GENERALI
-// =========================================
-
 // Array che conserva i prodotti della categoria attualmente selezionata
 var prodottiCaricati = [];
 
@@ -10,11 +6,6 @@ var categoriaCaricata = false;
 
 // Indica se la finestra modale è aperta
 var modaleAperta = false;
-
-
-// =========================================
-// INIZIALIZZAZIONE DEL DOCUMENTO
-// =========================================
 
 $(document).ready(function() {
 
@@ -76,18 +67,11 @@ $(document).ready(function() {
 
     caricaContatoreCarrello();
 
-    // =========================================
-    // PUNTO 3.7 - EVENTI DELLA MODALE
-    // =========================================
-
     // Gestisco i clic su immagine, nome e pulsante dettagli.
-    // L'evento funziona anche sulle schede create successivamente.
-    $("#products-container").on(
-        "click",
-        ".product-image, .product-name, .details-button",
-        function() {
+    // L'evento funziona anche sulle schede create successivamente grazie a .on()
+    $("#products-container").on("click", ".product-image, .product-name, .details-button", function() {
 
-            // Risalgo alla scheda del prodotto cliccato
+            // Risalgo alla scheda del prodotto cliccato tramite .closest()
             var scheda = $(this).closest(".product-card");
 
             // Recupero l'ID del prodotto dalla scheda
@@ -104,7 +88,6 @@ $(document).ready(function() {
         chiudiModale();
     });
 
-
     // Chiudo la modale quando si clicca sull'area esterna.
     // Il clic dentro la finestra non deve chiuderla.
     $("#product-modal").click(function(event) {
@@ -115,20 +98,13 @@ $(document).ready(function() {
 
     });
 
-
     // Chiudo la modale quando viene premuto ESC
     $(document).keydown(function(event) {
 
         if (modaleAperta === true && event.which === 27) {
             chiudiModale();
         }
-
     });
-
-
-    // =========================================
-    // PUNTO 3.8 - EVENTO AGGIUNGI AL CARRELLO
-    // =========================================
 
     // Gestisco i pulsanti delle schede e della modale
     $(document).on("click", ".add-to-cart-button", function() {
@@ -147,11 +123,6 @@ $(document).ready(function() {
     });
 
 });
-
-
-// =========================================
-// CARICAMENTO DEL FILE XML TRAMITE AJAX
-// =========================================
 
 function caricaProdotti(fileXML) {
 
@@ -173,11 +144,6 @@ function caricaProdotti(fileXML) {
         }
     });
 }
-
-
-// =========================================
-// LETTURA DEI PRODOTTI DALL'XML
-// =========================================
 
 function leggiProdotti(xml) {
 
@@ -212,28 +178,19 @@ function leggiProdotti(xml) {
     }
 }
 
-
-// =========================================
-// PUNTO 3.5 - RICERCA DEI PRODOTTI
-// =========================================
-
 // Verifica se un prodotto corrisponde alla ricerca
 function prodottoCorrisponde(prodotto, parolaRicerca) {
 
-    // Converto in minuscolo i dati del prodotto
+    // Normalizzo la parola di ricerca e i campi del prodotto in minuscolo
+    var ricerca = parolaRicerca.toLowerCase().trim();
     var nome = prodotto.nome.toLowerCase();
     var marca = prodotto.marca.toLowerCase();
     var descrizione = prodotto.descrizione.toLowerCase();
 
-    // Verifico se la parola è presente in almeno uno dei tre campi
-    if (nome.indexOf(parolaRicerca) !== -1 ||
-        marca.indexOf(parolaRicerca) !== -1 ||
-        descrizione.indexOf(parolaRicerca) !== -1) {
-
-        return true;
-    }
-
-    return false;
+    // Ritorna vero se la parola è presente in almeno uno dei tre
+    return nome.includes(ricerca) ||
+        marca.includes(ricerca) ||
+        descrizione.includes(ricerca);
 }
 
 
@@ -251,11 +208,6 @@ function filtraProdotti(prodotti, parolaRicerca) {
 
     return prodottiFiltrati;
 }
-
-
-// =========================================
-// PUNTO 3.6 - ORDINAMENTO DEI PRODOTTI
-// =========================================
 
 // Restituisce la funzione di confronto in base al criterio scelto
 function ottieniConfronto(criterio) {
@@ -296,7 +248,7 @@ function ordinaProdotti(prodotti, criterio) {
     // Creo una copia dell'array ricevuto
     var prodottiOrdinati = prodotti.slice();
 
-    // Se il criterio è vuoto, mantengo l'ordine originale
+    // Se il criterio è vuoto, ritorno l'ordine originale
     if (criterio === "") {
         return prodottiOrdinati;
     }
@@ -309,11 +261,6 @@ function ordinaProdotti(prodotti, criterio) {
 
     return prodottiOrdinati;
 }
-
-
-// =========================================
-// AGGIORNAMENTO DELLA VISUALIZZAZIONE
-// =========================================
 
 function aggiornaVisualizzazione() {
 
@@ -347,19 +294,11 @@ function aggiornaVisualizzazione() {
 }
 
 
-// =========================================
-// FUNZIONE DI FORMATTAZIONE DEL PREZZO
-// =========================================
-
 // Restituisce il prezzo con due cifre decimali
 function formattaPrezzo(prezzo) {
     return (prezzo * 1).toFixed(2);
 }
 
-
-// =========================================
-// CREAZIONE DELLA SCHEDA DEL PRODOTTO
-// =========================================
 
 function creaSchedaProdotto(id, nome, marca, descrizione, prezzo, immagine, disponibilita) {
 
@@ -399,7 +338,7 @@ function creaSchedaProdotto(id, nome, marca, descrizione, prezzo, immagine, disp
     scheda += "Visualizza dettagli";
     scheda += "</button>";
 
-    // Pulsante del carrello già previsto dal punto 3.4
+    // Pulsante del carrello
     scheda += "<button type='button' class='add-to-cart-button' data-id='" + id + "'>";
     scheda += "Aggiungi al carrello";
     scheda += "</button>";
@@ -411,10 +350,6 @@ function creaSchedaProdotto(id, nome, marca, descrizione, prezzo, immagine, disp
     return scheda;
 }
 
-
-// =========================================
-// VISUALIZZAZIONE DEI PRODOTTI
-// =========================================
 
 function visualizzaProdotti(prodotti) {
 
@@ -433,16 +368,8 @@ function visualizzaProdotti(prodotti) {
         );
     }
 
-    contenuto += "<div class='products-clear'></div>";
-
     $("#products-container").html(contenuto);
 }
-
-
-// =========================================
-// BLOCCO A - PUNTO 3.7
-// MODALE DETTAGLI PRODOTTO
-// =========================================
 
 
 // Cerca un prodotto per ID nell'array completo della categoria
@@ -483,7 +410,7 @@ function creaContenutoModale(prodotto) {
     contenuto += "<img class='modal-product-image' src='" + prodotto.immagine + "' alt='" + prodotto.nome + "'>";
     contenuto += "</div>";
 
-    // Colonna destra: informazioni
+    // Colonna destra: informazioni del prodotto
     contenuto += "<div class='modal-product-info'>";
 
     contenuto += "<h2 class='modal-product-name'>" + prodotto.nome + "</h2>";
@@ -551,17 +478,9 @@ function chiudiModale() {
     modaleAperta = false;
 }
 
-
-// =========================================
-// BLOCCO B - PUNTO 3.8
-// AGGIUNTA SIMULATA AL CARRELLO
-// =========================================
-
-
-// Funzione dedicata all'aggiunta del prodotto
+// Funzione dedicata all'aggiunta del prodotto simulata tramite alert
 function aggiungiAlCarrello(id, nome) {
 
-    // Per ora l'aggiunta è simulata tramite alert
     alert("Prodotto aggiunto al carrello: " + nome + " (id: " + id + ")");
 }
 

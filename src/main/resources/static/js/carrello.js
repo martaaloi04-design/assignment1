@@ -1,8 +1,11 @@
 var elementiCarrello = [];
 
 $(document).ready(function() {
+
+    // Caricamento iniziale dei prodotti del carrello dal file XML
     caricaCarrello("xml/carrello.xml");
 
+    // Gestore eventi con delegazione .on() per i pulsanti di modifica quantità generati dinamicamente
     $(document).on("click", ".quantity-button", function() {
 
         // Recupero la riga del prodotto cliccato
@@ -17,7 +20,7 @@ $(document).ready(function() {
         // Verifico che il prodotto esista
         if (elemento !== null) {
 
-            // Recupero l'operazione richiesta
+            // Recupero l'operazione richiesta se - o +
             var operazione = $(this).html();
 
             var nuovaQuantita = elemento.quantita;
@@ -41,13 +44,13 @@ $(document).ready(function() {
                 // Aggiorno la quantità nell'array
                 elemento.quantita = nuovaQuantita;
 
-                // Aggiorno la visualizzazione
+                // Aggiorno la visualizzazione del carrello
                 aggiornaVisualizzazioneCarrello();
             }
         }
     });
 
-
+    //Gestore eventi con delegazione per i pulsanti di rimozione generati dinamicamente
     $(document).on("click", ".remove-cart-button", function() {
 
         // Recupero la riga del prodotto cliccato
@@ -85,6 +88,7 @@ $(document).ready(function() {
     });
 });
 
+//Carico i dati del carrello tramite AJAX e ne gestisco successo ed errori
 function caricaCarrello(fileXML) {
     $.ajax({
         url: fileXML,
@@ -115,6 +119,7 @@ function leggiCarrello(xml) {
         var quantita = parseInt(elemento.getElementsByTagName("quantita")[0].childNodes[0].nodeValue);
         var immagine = elemento.getElementsByTagName("immagine")[0].childNodes[0].nodeValue;
 
+        //Inserisco l'oggetto del prodotto nell'array del carrello
         elementiCarrello.push({
             idProdotto: idProdotto,
             nome: nome,
@@ -129,6 +134,7 @@ function leggiCarrello(xml) {
 function creaRigaCarrello(elemento) {
     var subtotale = calcolaTotaleParziale(elemento);
 
+    // Costruisco la struttura HTML del singolo prodotto nel carrello
     var riga = `
         <article class="cart-item" data-id="${elemento.idProdotto}">
             <img src="${elemento.immagine}" alt="${elemento.nome}" class="cart-item-image">
@@ -163,6 +169,7 @@ function visualizzaRigheCarrello(elementi) {
         contenuto += creaRigaCarrello(elementi[i]);
     }
 
+    // Rendering nel DOM: aggiorno il contenuto del contenitore con l'HTML generato in creaRigheCarrello()
     $("#cart-items-container").html(contenuto);
 }
 
@@ -190,7 +197,6 @@ function aggiornaContatoreCarrello(elementi) {
 }
 
 function rimuoviDalCarrello(nome) {
-
     alert("Hai rimosso dal carrello: " + nome);
 }
 

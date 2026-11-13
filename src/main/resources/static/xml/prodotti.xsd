@@ -6,7 +6,6 @@
     <xs:element name="prodotti">
         <xs:complexType>
 
-            <!-- I prodotti devono comparire in sequenza -->
             <xs:sequence>
                 <xs:element name="prodotto"
                             type="prodottoType"

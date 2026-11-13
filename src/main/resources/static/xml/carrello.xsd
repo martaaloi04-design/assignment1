@@ -7,7 +7,6 @@
 
             <xs:sequence>
 
-                <!-- Il carrello deve contenere almeno due elementi -->
                 <xs:element name="elemento"
                             type="elementoType"
                             minOccurs="2"
@@ -18,8 +17,6 @@
         </xs:complexType>
     </xs:element>
 
-
-    <!-- Definizione del tipo riutilizzabile di ciascun elemento -->
     <xs:complexType name="elementoType">
 
         <xs:sequence>
@@ -30,7 +27,6 @@
 
             <xs:element name="prezzoUnitario" type="xs:decimal"/>
 
-            <!-- La quantità deve essere un intero maggiore o uguale a 1 -->
             <xs:element name="quantita">
                 <xs:simpleType>
                     <xs:restriction base="xs:integer">

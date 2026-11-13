@@ -1,6 +1,3 @@
-/* =========================================
-   1. IMPOSTAZIONI GENERALI
-   ========================================= */
 
 * {
     box-sizing: border-box;
@@ -13,10 +10,7 @@ body {
     font-family: Arial, Verdana, sans-serif;
 }
 
-
-/* =========================================
-   2. HEADER DEL NEGOZIO
-   ========================================= */
+/* header */
 
 .site-header {
     display: flex;
@@ -55,9 +49,7 @@ body {
 }
 
 
-/* =========================================
-   3. NAVIGAZIONE E CARRELLO
-   ========================================= */
+/* navigazione del carrello  */
 
 .header-navigation a {
     display: inline-block;
@@ -88,9 +80,7 @@ body {
 }
 
 
-/* =========================================
-   4. CONTENITORE PRINCIPALE
-   ========================================= */
+/* contenitore principale */
 
 main {
     width: 100%;
@@ -101,10 +91,7 @@ main {
 }
 
 
-/* =========================================
-   5. BARRA STRUMENTI
-   Categoria, ricerca e spazio ordinamento
-   ========================================= */
+/* barra strumenti: categoria, ricerca, ordinamento */
 
 .catalog-toolbar {
     display: grid;
@@ -182,9 +169,7 @@ main {
 }
 
 
-/* =========================================
-   6. GRIGLIA DEI PRODOTTI
-   ========================================= */
+/* griglia dei prodotti */
 
 #products-container {
     display: grid;
@@ -195,19 +180,7 @@ main {
     align-items: stretch;
 }
 
-
-/* Il div generato dal JavaScript serviva
-   alla precedente disposizione con float.
-   Con CSS Grid non è più necessario. */
-
-.products-clear {
-    display: none;
-}
-
-
-/* =========================================
-   7. SCHEDA DEL SINGOLO PRODOTTO
-   ========================================= */
+/* scheda del singolo prodotto */
 
 .product-card {
     display: flex;
@@ -237,9 +210,7 @@ main {
 }
 
 
-/* =========================================
-   8. IMMAGINE DEL PRODOTTO
-   ========================================= */
+/* immagine del prodotto */
 
 .product-image {
     display: block;
@@ -255,9 +226,7 @@ main {
 }
 
 
-/* =========================================
-   9. INFORMAZIONI DEL PRODOTTO
-   ========================================= */
+/* informazioni del prodotto */
 
 .product-name {
     color: #603A24;
@@ -300,9 +269,7 @@ main {
 }
 
 
-/* =========================================
-   10. DISPONIBILITÀ DEL PRODOTTO
-   ========================================= */
+/* disponibilità del prodotto */
 
 .product-availability {
     display: inline-block;
@@ -330,9 +297,7 @@ main {
 }
 
 
-/* =========================================
-   11. PULSANTE AGGIUNGI AL CARRELLO
-   ========================================= */
+/* pulsante aggiungi al carrello */
 
 .add-to-cart-button {
     width: 100%;
@@ -365,9 +330,7 @@ main {
     box-shadow: 0 0 0 3px #E8AD57;
 }
 
-/* =========================================
-   PULSANTE VISUALIZZA DETTAGLI
-   ========================================= */
+/* pulsante visualizza i dettagli */
 
 .details-button {
     width: 100%;
@@ -394,7 +357,7 @@ main {
     color: #603A24;
 }
 
-/* CONTENITORE DEI PULSANTI DEL PRODOTTO */
+/* contenitore dei pulsanti del prodotto */
 
 .product-actions {
     display: flex;
@@ -404,30 +367,21 @@ main {
     margin-top: auto;
 }
 
-/* =========================================
-   12. MESSAGGIO NESSUN RISULTATO
-   ========================================= */
+/* messaggio nessun risultato */
 
 #no-results-message {
     display: none;
 
     color: #603A24;
-
     font-size: 16px;
     font-weight: bold;
-
     text-align: center;
 
     margin-top: 20px;
     padding: 15px;
-
-    background-color: #EAD5B8;
-    border-radius: 5px;
 }
 
-/* =========================================
-   13. MENU DI ORDINAMENTO - PUNTO 3.6
-   ========================================= */
+/* menù di ordinamento */
 
 .sort-section {
     width: 100%;
@@ -462,9 +416,7 @@ main {
 }
 
 
-/* =========================================
-   14. OVERLAY DELLA FINESTRA MODALE
-   ========================================= */
+/* overlay della finestra modale */
 
 .modal-overlay {
     display: none;
@@ -483,9 +435,7 @@ main {
 }
 
 
-/* =========================================
-   15. FINESTRA MODALE
-   ========================================= */
+/* finestra modale */
 
 .modal-window {
     position: absolute;
@@ -512,9 +462,7 @@ main {
 }
 
 
-/* =========================================
-   16. PULSANTE DI CHIUSURA
-   ========================================= */
+/* pulsante di chiusura */
 
 .close-modal-button {
     position: absolute;
@@ -541,9 +489,7 @@ main {
 }
 
 
-/* =========================================
-   17. DISPOSIZIONE DEL CONTENUTO DELLA MODALE
-   ========================================= */
+/* disposizione del contenuto della modale in due colonne */
 
 .modal-product-layout {
     display: flex;
@@ -609,15 +555,13 @@ main {
     margin-bottom: 15px;
 }
 
-/* =========================================
-   18. BLOCCO SCORRIMENTO PAGINA SOTTO LA MODALE
-   ========================================= */
+/* blocco scorrimento pagina sotto la modale  */
 
 body.modal-open {
     overflow: hidden;
 }
 
-/* 20. HEADER E CONTATORE CARRELLO */
+/* header e contatore carrello */
 
 .site-header {
     gap: 30px;
@@ -654,7 +598,7 @@ body.modal-open {
 }
 
 
-/* 21. BARRA DEGLI STRUMENTI DEL CATALOGO */
+/* barra degli strumenti del catalogo */
 
 .catalog-toolbar {
     display: flex;
@@ -677,7 +621,7 @@ body.modal-open {
 }
 
 
-/* 22. PAGINA CARRELLO */
+/* pagina carrello */
 
 .cart-page-title {
     text-align: center;
@@ -762,9 +706,7 @@ body.modal-open {
 }
 
 
-/* =========================================
-   MESSAGGIO CARRELLO VUOTO
-   ========================================= */
+/* messaggio carrello vuoto */
 
 #empty-cart-message {
     display: none;
@@ -776,9 +718,6 @@ body.modal-open {
 
     margin-top: 20px;
     padding: 20px;
-
-    background-color: #EAD5B8;
-    border-radius: 5px;
 }
 
 #empty-cart-message a {
@@ -786,9 +725,7 @@ body.modal-open {
     font-weight: bold;
     text-decoration: underline;
 }
-/* =========================================
-   ADATTAMENTO PAGINA CARRELLO
-   ========================================= */
+/* adattamento pagina carrello */
 
 @media (max-width: 900px) {
 
