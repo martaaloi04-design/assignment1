@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<prodotti categoria="libri"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="prodotti.xsd">
+
+    <prodotto>
+        <id>6</id>
+        <nome>Il nome della rosa</nome>
+        <descrizione>
+            Giallo storico ambientato in un’abbazia medievale: un frate indaga su una serie di morti misteriose.
+        </descrizione>
+        <prezzo>14.99</prezzo>
+        <marca>Umberto Eco</marca>
+        <immagine>immagini/umberto.jpg</immagine>
+        <disponibilita>Non disponibile</disponibilita>
+    </prodotto>
+
+    <prodotto>
+        <id>7</id>
+        <nome>1984</nome>
+        <descrizione>
+            Romanzo distopico su una società sotto il controllo totale di un regime che sorveglia ogni cosa, anche i pensieri.
+        </descrizione>
+        <prezzo>13</prezzo>
+        <marca>George Orwell</marca>
+        <immagine>immagini/george.jpg</immagine>
+        <disponibilita>Disponibile</disponibilita>
+    </prodotto>
+
+    <prodotto>
+        <id>8</id>
+        <nome>Sapiens. Da animali a dèi</nome>
+        <descrizione>
+            Saggio che racconta la storia dell’umanità, dalla preistoria a oggi, in modo semplice e coinvolgente.
+        </descrizione>
+        <prezzo>15</prezzo>
+        <marca>Yuval Noah Harari</marca>
+        <immagine>immagini/yuval.jpg</immagine>
+        <disponibilita>Disponibile</disponibilita>
+    </prodotto>
+
+    <prodotto>
+        <id>9</id>
+        <nome>L’amica geniale</nome>
+        <descrizione>
+            Primo volume della saga su due amiche cresciute in un rione popolare di Napoli negli anni Cinquanta.
+        </descrizione>
+        <prezzo>12</prezzo>
+        <marca>Elena Ferrante</marca>
+        <immagine>immagini/elena.jpg</immagine>
+        <disponibilita>Disponibile</disponibilita>
+    </prodotto>
+
+    <prodotto>
+        <id>10</id>
+        <nome>Padre ricco, padre povero</nome>
+        <descrizione>
+            Libro di educazione finanziaria che confronta due modi di pensare al denaro. Utile per chi inizia a lavorare, anche se alcuni consigli sono discussi.
+        </descrizione>
+        <prezzo>14.99</prezzo>
+        <marca>Robert Kiyosaki</marca>
+        <immagine>immagini/robert.jpg</immagine>
+        <disponibilita>Disponibile</disponibilita>
+    </prodotto>
+
+</prodotti>

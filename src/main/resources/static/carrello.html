@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il tuo carrello - OMBRA BOX</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="header-brand">
+        <img src="immagini/logo.png" alt="logo OMBRA BOX" class="header-logo">
+        <h1 class="header-title">Tutto ciò che cerchi, in un'unica box.</h1>
+    </div>
+
+    <nav class="header-navigation">
+        <a href="index.html">Torna al catalogo</a>
+        <span id="cart-count" class="cart-count"></span>
+    </nav>
+</header>
+
+<main>
+    <h2 class="cart-page-title">Il tuo carrello</h2>
+
+    <div class="cart-layout">
+        <div class="cart-products">
+            <div id="cart-items-container"></div>
+            <p id="empty-cart-message">
+                Il carrello è vuoto.
+                <a href="index.html">Torna al catalogo</a>
+            </p>
+            <p id="cart-error-message"></p>
+        </div>
+
+        <section class="cart-summary">
+            <h3>Riepilogo ordine</h3>
+            <p id="cart-total"></p>
+        </section>
+    </div>
+</main>
+
+<script src="js/jquery-4.0.0.js"></script>
+<script src="js/carrello.js"></script>
+
+</body>
+</html>

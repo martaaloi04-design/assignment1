@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<prodotti categoria="abbigliamento"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="prodotti.xsd">
+
+    <prodotto>
+        <id>11</id>
+        <nome>Giubbotto</nome>
+        <descrizione>
+            Giubbotto invernale con imbottitura sintetica leggera, cappuccio staccabile e tasche con zip. Resiste al freddo e alla pioggia leggera.
+        </descrizione>
+        <prezzo>149.90</prezzo>
+        <marca>Nebulus</marca>
+        <immagine>immagini/giubbotto.jpg</immagine>
+        <disponibilita>Disponibile</disponibilita>
+    </prodotto>
+
+    <prodotto>
+        <id>12</id>
+        <nome>Felpa con cappuccio</nome>
+        <descrizione>
+            Felpa in cotone misto, taglio regolare, tasca a marsupio e coulisse regolabile. Disponibile in nero, grigio melange e blu navy.
+        </descrizione>
+        <prezzo>44.99</prezzo>
+        <marca>Urbanfit</marca>
+        <immagine>immagini/felpa.jpg</immagine>
+        <disponibilita>Disponibile</disponibilita>
+    </prodotto>
+
+    <prodotto>
+        <id>13</id>
+        <nome>Jeans slim fit</nome>
+        <descrizione>
+            Jeans slim in denim elasticizzato, cinque tasche, lavaggio scuro. Comodi per tutti i giorni e adatti anche a un contesto informale in ufficio.
+        </descrizione>
+        <prezzo>69.90</prezzo>
+        <marca>Denimore</marca>
+        <immagine>immagini/jeans.jpg</immagine>
+        <disponibilita>Disponibile</disponibilita>
+    </prodotto>
+
+    <prodotto>
+        <id>14</id>
+        <nome>Camicia lino</nome>
+        <descrizione>
+            Camicia in lino oxford con colletto button-down, vestibilità regolare. Si abbina bene sia a jeans sia a pantaloni eleganti.
+        </descrizione>
+        <prezzo>54.90</prezzo>
+        <marca>Bellamy e Co.</marca>
+        <immagine>immagini/camicia.jpg</immagine>
+        <disponibilita>Disponibile</disponibilita>
+    </prodotto>
+
+    <prodotto>
+        <id>15</id>
+        <nome>Sneakers runner</nome>
+        <descrizione>
+        Scarpe sportive in tessuto traspirante con suola ammortizzata e plantare estraibile. Pensate per camminare e per l’uso quotidiano.
+        </descrizione>
+        <prezzo>79.99</prezzo>
+        <marca>Stridelab</marca>
+        <immagine>immagini/sneakers.jpg</immagine>
+        <disponibilita>Disponibile</disponibilita>
+    </prodotto>
+
+</prodotti>

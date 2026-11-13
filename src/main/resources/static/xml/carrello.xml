@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<carrello
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="carrello.xsd">
+
+    <elemento>
+        <idProdotto>1</idProdotto>
+        <nome>Smartphone Galaxy A57</nome>
+        <prezzoUnitario>349.99</prezzoUnitario>
+        <quantita>1</quantita>
+        <immagine>immagini/smartphone.jpg</immagine>
+    </elemento>
+
+    <elemento>
+        <idProdotto>7</idProdotto>
+        <nome>1984</nome>
+        <prezzoUnitario>13.00</prezzoUnitario>
+        <quantita>2</quantita>
+        <immagine>immagini/george.jpg</immagine>
+    </elemento>
+
+    <elemento>
+        <idProdotto>12</idProdotto>
+        <nome>Felpa con cappuccio</nome>
+        <prezzoUnitario>44.99</prezzoUnitario>
+        <quantita>1</quantita>
+        <immagine>immagini/felpa.jpg</immagine>
+    </elemento>
+
+</carrello>

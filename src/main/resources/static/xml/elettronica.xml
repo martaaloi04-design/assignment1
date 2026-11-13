@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<prodotti categoria="elettronica"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="prodotti.xsd">
+
+    <prodotto>
+        <id>1</id>
+        <nome>Smartphone Galaxy A57</nome>
+        <descrizione>
+            Smartphone con display AMOLED da 6,6 pollici, fotocamera da 50 MP e connettività 5G.
+        </descrizione>
+        <prezzo>349.99</prezzo>
+        <marca>Samsung</marca>
+        <immagine>immagini/smartphone.jpg</immagine>
+        <disponibilita>Disponibile</disponibilita>
+    </prodotto>
+
+    <prodotto>
+        <id>2</id>
+        <nome>Cuffie Wireless WH-CH520</nome>
+        <descrizione>
+            Cuffie Bluetooth con autonomia fino a 50 ore e design leggero e confortevole.
+        </descrizione>
+        <prezzo>49.99</prezzo>
+        <marca>Sony</marca>
+        <immagine>immagini/cuffie.jpg</immagine>
+        <disponibilita>Disponibile</disponibilita>
+    </prodotto>
+
+    <prodotto>
+        <id>3</id>
+        <nome>Tablet Redmi Pad SE</nome>
+        <descrizione>
+            Tablet con display da 11 pollici, ideale per studio, lavoro e intrattenimento.
+        </descrizione>
+        <prezzo>179.99</prezzo>
+        <marca>Xiaomi</marca>
+        <immagine>immagini/tablet.jpg</immagine>
+        <disponibilita>Disponibile</disponibilita>
+    </prodotto>
+
+    <prodotto>
+        <id>4</id>
+        <nome>Smartwatch Galaxy Fit3</nome>
+        <descrizione>
+            Smartwatch con monitoraggio dell'attività fisica, del sonno e delle notifiche.
+        </descrizione>
+        <prezzo>69.99</prezzo>
+        <marca>Samsung</marca>
+        <immagine>immagini/smartwatch.jpg</immagine>
+        <disponibilita>Disponibile</disponibilita>
+    </prodotto>
+
+    <prodotto>
+        <id>5</id>
+        <nome>Mouse Wireless M185</nome>
+        <descrizione>
+            Mouse wireless compatto con connessione USB e design ergonomico.
+        </descrizione>
+        <prezzo>14.99</prezzo>
+        <marca>Logitech</marca>
+        <immagine>immagini/mouse.jpg</immagine>
+        <disponibilita>Disponibile</disponibilita>
+    </prodotto>
+
+</prodotti>

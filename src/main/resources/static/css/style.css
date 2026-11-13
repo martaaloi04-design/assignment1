@@ -1,0 +1,815 @@
+/* =========================================
+   1. IMPOSTAZIONI GENERALI
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #FFF9F0;
+    color: #603A24;
+    font-family: Arial, Verdana, sans-serif;
+}
+
+
+/* =========================================
+   2. HEADER DEL NEGOZIO
+   ========================================= */
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #EAD5B8;
+    border-bottom: 2px solid #E8AD57;
+
+    padding: 15px 4%;
+}
+
+
+/* Logo e slogan */
+
+.header-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.header-logo {
+    display: block;
+    width: 230px;
+    height: auto;
+}
+
+.header-title {
+    color: #603A24;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   3. NAVIGAZIONE E CARRELLO
+   ========================================= */
+
+.header-navigation a {
+    display: inline-block;
+
+    background-color: #C77B29;
+    color: #FFFFFF;
+
+    padding: 12px 20px;
+    border: 1px solid #C77B29;
+    border-radius: 6px;
+
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.header-navigation a:hover {
+    background-color: #E8AD57;
+    border-color: #E8AD57;
+    color: #603A24;
+}
+
+.header-navigation a:focus {
+    border-color: #603A24;
+    box-shadow: 0 0 0 3px #E8AD57;
+}
+
+
+/* =========================================
+   4. CONTENITORE PRINCIPALE
+   ========================================= */
+
+main {
+    width: 100%;
+    max-width: 1320px;
+
+    margin: 0 auto;
+    padding: 30px 24px 50px;
+}
+
+
+/* =========================================
+   5. BARRA STRUMENTI
+   Categoria, ricerca e spazio ordinamento
+   ========================================= */
+
+.catalog-toolbar {
+    display: grid;
+
+    grid-template-columns: 230px minmax(250px, 1fr) 170px;
+    gap: 25px;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+
+/* Selezione categoria */
+
+.category-section h2 {
+    color: #603A24;
+    font-size: 19px;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+#category-selector {
+    width: 100%;
+    height: 44px;
+
+    padding: 8px 12px;
+
+    background-color: #FFFFFF;
+    color: #603A24;
+
+    border: 1px solid #EAD5B8;
+    border-radius: 5px;
+
+    font-size: 15px;
+}
+
+#category-selector:focus {
+    border-color: #C77B29;
+    box-shadow: 0 0 0 3px #E8AD57;
+}
+
+
+/* Campo di ricerca */
+
+.search-section {
+    width: 100%;
+}
+
+#search-input {
+    width: 100%;
+    height: 44px;
+
+    padding: 10px 15px;
+
+    background-color: #FFFFFF;
+    color: #603A24;
+
+    border: 1px solid #EAD5B8;
+    border-radius: 5px;
+
+    font-size: 15px;
+}
+
+#search-input:focus {
+    border-color: #C77B29;
+    box-shadow: 0 0 0 3px #E8AD57;
+}
+
+
+/* Spazio riservato all'ordinamento futuro */
+
+.sort-placeholder {
+    width: 100%;
+}
+
+
+/* =========================================
+   6. GRIGLIA DEI PRODOTTI
+   ========================================= */
+
+#products-container {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+
+    align-items: stretch;
+}
+
+
+/* Il div generato dal JavaScript serviva
+   alla precedente disposizione con float.
+   Con CSS Grid non è più necessario. */
+
+.products-clear {
+    display: none;
+}
+
+
+/* =========================================
+   7. SCHEDA DEL SINGOLO PRODOTTO
+   ========================================= */
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    padding: 22px;
+
+    background-color: #FFFFFF;
+
+    border: 1px solid #EAD5B8;
+    border-radius: 9px;
+
+    box-shadow: 0 2px 7px #EAD5B8;
+
+    text-align: center;
+
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+
+/* Effetto al passaggio del mouse */
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 12px #EAD5B8;
+}
+
+
+/* =========================================
+   8. IMMAGINE DEL PRODOTTO
+   ========================================= */
+
+.product-image {
+    display: block;
+
+    width: 100%;
+    height: 190px;
+
+    margin-bottom: 15px;
+
+    background-color: #FFFFFF;
+
+    object-fit: contain;
+}
+
+
+/* =========================================
+   9. INFORMAZIONI DEL PRODOTTO
+   ========================================= */
+
+.product-name {
+    color: #603A24;
+
+    font-size: 19px;
+    font-weight: bold;
+
+    margin-top: 5px;
+    margin-bottom: 4px;
+}
+
+.product-brand {
+    color: #C77B29;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    margin-top: 4px;
+    margin-bottom: 12px;
+}
+
+.product-description {
+    color: #603A24;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.product-price {
+    color: #603A24;
+
+    font-size: 23px;
+    font-weight: bold;
+
+    margin-top: 12px;
+    margin-bottom: 15px;
+}
+
+
+/* =========================================
+   10. DISPONIBILITÀ DEL PRODOTTO
+   ========================================= */
+
+.product-availability {
+    display: inline-block;
+    align-self: center;
+
+    padding: 6px 12px;
+
+    border-radius: 5px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.availability-available {
+    color: #287A3D;
+    background-color: #E7F3E8;
+}
+
+.availability-unavailable {
+    color: #B3261E;
+    background-color: #FCE8E6;
+}
+
+
+/* =========================================
+   11. PULSANTE AGGIUNGI AL CARRELLO
+   ========================================= */
+
+.add-to-cart-button {
+    width: 100%;
+
+    margin-top: 0;
+    padding: 12px 15px;
+
+    background-color: #C77B29;
+    color: #FFFFFF;
+
+    border: 1px solid #C77B29;
+    border-radius: 5px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s;
+}
+
+.add-to-cart-button:hover {
+    background-color: #E8AD57;
+    border-color: #E8AD57;
+    color: #603A24;
+}
+
+.add-to-cart-button:focus {
+    border-color: #603A24;
+    box-shadow: 0 0 0 3px #E8AD57;
+}
+
+/* =========================================
+   PULSANTE VISUALIZZA DETTAGLI
+   ========================================= */
+
+.details-button {
+    width: 100%;
+    margin-top: 0;
+    padding: 12px 15px;
+
+    background-color: #EAD5B8;
+    color: #603A24;
+
+    border: 1px solid #C77B29;
+    border-radius: 5px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s;
+}
+
+.details-button:hover {
+    background-color: #E8AD57;
+    border-color: #E8AD57;
+    color: #603A24;
+}
+
+/* CONTENITORE DEI PULSANTI DEL PRODOTTO */
+
+.product-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    margin-top: auto;
+}
+
+/* =========================================
+   12. MESSAGGIO NESSUN RISULTATO
+   ========================================= */
+
+#no-results-message {
+    display: none;
+
+    color: #603A24;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    text-align: center;
+
+    margin-top: 20px;
+    padding: 15px;
+
+    background-color: #EAD5B8;
+    border-radius: 5px;
+}
+
+/* =========================================
+   13. MENU DI ORDINAMENTO - PUNTO 3.6
+   ========================================= */
+
+.sort-section {
+    width: 100%;
+}
+
+.sort-section label {
+    display: block;
+    color: #603A24;
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+#sort-selector {
+    width: 100%;
+    height: 44px;
+
+    padding: 8px 12px;
+
+    background-color: #FFFFFF;
+    color: #603A24;
+
+    border: 1px solid #EAD5B8;
+    border-radius: 5px;
+
+    font-size: 15px;
+}
+
+#sort-selector:focus {
+    border-color: #C77B29;
+    box-shadow: 0 0 0 3px #E8AD57;
+}
+
+
+/* =========================================
+   14. OVERLAY DELLA FINESTRA MODALE
+   ========================================= */
+
+.modal-overlay {
+    display: none;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    background-color: rgba(0, 0, 0, 0.65);
+
+    overflow-y: auto;
+}
+
+
+/* =========================================
+   15. FINESTRA MODALE
+   ========================================= */
+
+.modal-window {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+    max-width: 650px;
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 45px 25px 25px;
+
+    background-color: #FFFFFF;
+
+    border: 2px solid #EAD5B8;
+    border-radius: 9px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   16. PULSANTE DI CHIUSURA
+   ========================================= */
+
+.close-modal-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+
+    background-color: #C77B29;
+    color: #FFFFFF;
+
+    border: 1px solid #C77B29;
+    border-radius: 5px;
+
+    padding: 5px 12px;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.close-modal-button:hover {
+    background-color: #E8AD57;
+    color: #603A24;
+}
+
+
+/* =========================================
+   17. DISPOSIZIONE DEL CONTENUTO DELLA MODALE
+   ========================================= */
+
+.modal-product-layout {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    text-align: left;
+}
+
+/* Colonna sinistra: immagine */
+
+.modal-product-image-container {
+    width: 40%;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.modal-product-image {
+    width: 100%;
+    max-width: 280px;
+    height: 280px;
+
+    object-fit: contain;
+}
+
+/* Colonna destra: informazioni */
+
+.modal-product-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.modal-product-name {
+    color: #603A24;
+    font-size: 23px;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.modal-product-brand {
+    color: #C77B29;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.modal-product-description {
+    color: #603A24;
+    font-size: 14px;
+    line-height: 1.6;
+
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.modal-product-price {
+    color: #603A24;
+    font-size: 25px;
+    font-weight: bold;
+
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   18. BLOCCO SCORRIMENTO PAGINA SOTTO LA MODALE
+   ========================================= */
+
+body.modal-open {
+    overflow: hidden;
+}
+
+/* 20. HEADER E CONTATORE CARRELLO */
+
+.site-header {
+    gap: 30px;
+}
+
+.header-brand {
+    flex: 0 0 270px;
+}
+
+.header-search {
+    flex: 1;
+    width: auto;
+    max-width: 650px;
+}
+
+.header-navigation {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    padding: 0 7px;
+    border-radius: 50%;
+    background-color: #C77B29;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* 21. BARRA DEGLI STRUMENTI DEL CATALOGO */
+
+.catalog-toolbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    margin-bottom: 30px;
+}
+
+.category-section,
+.sort-section {
+    width: 230px;
+}
+
+.category-section h2,
+.sort-section label {
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+/* 22. PAGINA CARRELLO */
+
+.cart-page-title {
+    text-align: center;
+    color: #603A24;
+    margin: 35px 0;
+}
+
+.cart-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.cart-products {
+    flex: 1;
+    min-width: 0;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #FFF9F0;
+    border: 1px solid #EAD5B8;
+    border-radius: 10px;
+}
+
+.cart-item-image {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+
+.cart-item-details {
+    flex: 1;
+}
+
+.cart-product-name {
+    color: #603A24;
+    margin-top: 0;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.quantity-button,
+.remove-cart-button {
+    cursor: pointer;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #E8AD57;
+    color: #603A24;
+}
+
+.cart-item-subtotal {
+    min-width: 130px;
+    text-align: right;
+    color: #603A24;
+}
+
+.cart-summary {
+    width: 260px;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 20px;
+    text-align: right;
+    background-color: #EAD5B8;
+    border-radius: 10px;
+    color: #603A24;
+}
+
+#cart-error-message {
+    color: #a00000;
+    text-align: center;
+}
+
+
+/* =========================================
+   MESSAGGIO CARRELLO VUOTO
+   ========================================= */
+
+#empty-cart-message {
+    display: none;
+
+    color: #603A24;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+
+    margin-top: 20px;
+    padding: 20px;
+
+    background-color: #EAD5B8;
+    border-radius: 5px;
+}
+
+#empty-cart-message a {
+    color: #C77B29;
+    font-weight: bold;
+    text-decoration: underline;
+}
+/* =========================================
+   ADATTAMENTO PAGINA CARRELLO
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .cart-layout {
+        flex-direction: column;
+    }
+
+    .cart-summary {
+        width: 100%;
+    }
+
+    .cart-item {
+        flex-wrap: wrap;
+    }
+
+    .cart-item-details {
+        min-width: 180px;
+    }
+
+    .cart-item-subtotal {
+        width: 100%;
+        text-align: right;
+    }
+}

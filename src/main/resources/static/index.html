@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ombra Box</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-brand">
+            <img src="immagini/logo.png" alt="logo OMBRA BOX" class="header-logo">
+            <h1 class="header-title"> Tutto ciò che cerchi, in un'unica box. </h1>
+        </div>
+
+        <div class="search-section header-search">
+            <input type="text" id="search-input" placeholder="Cerca per nome, marca o descrizione">
+            <p id="no-results-message">Nessun prodotto trovato.</p>
+        </div>
+
+        <nav class="header-navigation">
+            <a href="carrello.html"> Vai al carrello </a>
+            <span id="cart-count" class="cart-count"></span>
+        </nav>
+    </header>
+
+    <main>
+        <div class="catalog-toolbar">
+            <section class="category-section">
+                <h2> Seleziona una categoria </h2>
+
+                <select id="category-selector">
+                    <option value=""> Seleziona una categoria </option>
+                    <option value="elettronica"> Elettronica  </option>
+                    <option value="libri"> Libri </option>
+                    <option value="abbigliamento"> Abbigliamento </option>
+                </select>
+            </section>
+
+            <div class="sort-section">
+                <label for="sort-selector">Ordina per</label>
+                <select id="sort-selector">
+                    <option value="">Ordina per...</option>
+                    <option value="prezzo-crescente">Prezzo crescente</option>
+                    <option value="prezzo-decrescente">Prezzo decrescente</option>
+                    <option value="nome-crescente">Nome A-Z</option>
+                    <option value="nome-decrescente">Nome Z-A</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="products-container"></div>
+    </main>
+
+    <div id="product-modal" class="modal-overlay">
+        <div class="modal-window">
+            <button type="button" id="close-modal" class="close-modal-button">
+                &times;
+            </button>
+
+            <div id="modal-content">
+
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="js/prodotti.js"></script>
+</body>
+</html>

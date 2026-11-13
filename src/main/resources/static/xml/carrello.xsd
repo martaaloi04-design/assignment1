@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="carrello">
+        <xs:complexType>
+
+            <xs:sequence>
+
+                <!-- Il carrello deve contenere almeno due elementi -->
+                <xs:element name="elemento"
+                            type="elementoType"
+                            minOccurs="2"
+                            maxOccurs="unbounded"/>
+
+            </xs:sequence>
+
+        </xs:complexType>
+    </xs:element>
+
+
+    <!-- Definizione del tipo riutilizzabile di ciascun elemento -->
+    <xs:complexType name="elementoType">
+
+        <xs:sequence>
+
+            <xs:element name="idProdotto" type="xs:integer"/>
+
+            <xs:element name="nome" type="xs:string"/>
+
+            <xs:element name="prezzoUnitario" type="xs:decimal"/>
+
+            <!-- La quantità deve essere un intero maggiore o uguale a 1 -->
+            <xs:element name="quantita">
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:minInclusive value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+
+            <xs:element name="immagine" type="xs:string"/>
+
+        </xs:sequence>
+
+    </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Definizione dell'elemento radice -->
+    <xs:element name="prodotti">
+        <xs:complexType>
+
+            <!-- I prodotti devono comparire in sequenza -->
+            <xs:sequence>
+                <xs:element name="prodotto"
+                            type="prodottoType"
+                            minOccurs="5"
+                            maxOccurs="unbounded"/>
+            </xs:sequence>
+
+            <!-- Attributo categoria obbligatorio -->
+            <xs:attribute name="categoria"
+                          type="xs:string"
+                          use="required"/>
+
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Definizione del tipo di dato riutilizzabile per ogni prodotto -->
+    <xs:complexType name="prodottoType">
+        <xs:sequence>
+            <xs:element name="id" type="xs:integer"/>
+            <xs:element name="nome" type="xs:string"/>
+            <xs:element name="descrizione" type="xs:string"/>
+            <xs:element name="prezzo" type="xs:decimal"/>
+            <xs:element name="marca" type="xs:string"/>
+            <xs:element name="immagine" type="xs:string"/>
+            <xs:element name="disponibilita" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
